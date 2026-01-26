@@ -552,17 +552,27 @@ body.theme-home .badge {
 .pill::after {
   content: none !important;
 }
-/* Fix: keep badges inside the card flow (no right-side empty column) */
-.card {
-  display: block; /* ensure not split layout */
-}
-
+/* Force badges to live inside the card flow (no right column layout) */
 .card .badge-row,
 .card .pill-row {
-  margin-top: 10px;
-  justify-content: flex-start;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  float: none !important;
+  position: static !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 10px 0 0 0 !important;
 }
 
-.card ul {
-  margin-bottom: 10px;
+/* If the card uses an inner split layout, neutralize common 2-col patterns */
+.card > * {
+  float: none !important;
+}
+
+/* Prevent any "column" effect on badges */
+.badge, .pill {
+  flex: 0 0 auto !important;
 }
