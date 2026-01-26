@@ -36,7 +36,7 @@ Welkom! Dit portfolio geeft een overzicht van praktijkgerichte IT-projecten waar
 
 ---
 
-### 2) Botje / Family Hub – Automatisatie & Web
+### 2) **Botje / Family Hub** - [detailpagina](botje-familyhub.md)
 
 **Context**: Eigen webapplicatie voor gezinsplanning en automatisatie.
 
