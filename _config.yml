@@ -1,3 +1,6 @@
 title: Jochen Thoelen - Portfolio
 description: Praktijkgerichte IT-projecten (AD/GPO, automatisatie, web).
 theme: minima
+header_pages:
+  - ad-electro/index.md
+  - botje-familyhub/index.md
