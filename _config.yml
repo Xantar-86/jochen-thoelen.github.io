@@ -8,3 +8,8 @@ baseurl: "/jochen-thoelen.github.io"
 header_pages:
   - ad-electro/index.md
   - botje-familyhub/index.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
