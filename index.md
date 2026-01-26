@@ -12,7 +12,7 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
 ## Highlights
 
 <div class="feature-grid">
-  <div class="feature">
+  <div class="feature reveal">
     <div class="feature-title">Infrastructuur &amp; security</div>
     <div class="feature-text">AD-ontwerp, GPO, rechtenbeheer en beheerbaarheid volgens best practices.</div>
     <div class="pill-row">
@@ -22,7 +22,7 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
     </div>
   </div>
 
-  <div class="feature">
+  <div class="feature reveal">
     <div class="feature-title">Automatisatie</div>
     <div class="feature-text">Reproduceerbare oplossingen, duidelijke workflows en troubleshooting zonder hacks.</div>
     <div class="pill-row">
@@ -32,7 +32,7 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
     </div>
   </div>
 
-  <div class="feature">
+  <div class="feature reveal">
     <div class="feature-title">Web &amp; integraties</div>
     <div class="feature-text">Moderne webstack met externe services en veilige configuratie (secrets).</div>
     <div class="pill-row">
@@ -47,7 +47,7 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
 
 ## Projecten
 
-<div class="card-grid">
+<div class="card-grid reveal">
   <a class="card" href="/jochen-thoelen.github.io/ad-electro/">
     <h3>Active Directory &amp; Windows Server (Electro)</h3>
     <p class="muted">
@@ -60,6 +60,12 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
       <li>GPO en auditing</li>
     </ul>
   </a>
+<div class="badge-row">
+  <span class="badge">Windows Server</span>
+  <span class="badge">Active Directory</span>
+  <span class="badge">GPO</span>
+  <span class="badge">DFS/NTFS</span>
+</div>
 
   <a class="card" href="/jochen-thoelen.github.io/botje-familyhub/">
     <h3>Botje / Family Hub</h3>
@@ -73,13 +79,19 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
       <li>Environment variables &amp; cloud config</li>
     </ul>
   </a>
+  <div class="badge-row">
+  <span class="badge">Next.js</span>
+  <span class="badge">Supabase</span>
+  <span class="badge">Google Calendar API</span>
+  <span class="badge">Automation</span>
+</div>
 </div>
 
 ---
 
 ## Contact
 
-<div class="cta-box">
+<div class="cta-box reveal">
   <div class="cta-left">
     <div class="cta-title">Interesse in mijn profiel?</div>
     <div class="cta-text">Bekijk mijn LinkedIn of contacteer me rechtstreeks.</div>

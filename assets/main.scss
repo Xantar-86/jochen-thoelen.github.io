@@ -436,3 +436,88 @@ body.theme-home .cta-right {
   gap: 10px;
   flex-wrap: wrap;
 }
+/* Reveal animations (subtle) */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Badges */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 10px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(230, 237, 243, 0.06);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+body.theme-home .badge {
+  background: rgba(88, 166, 255, 0.08);
+  border-color: rgba(88, 166, 255, 0.22);
+}
+
+/* Screenshot grid */
+.shot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (min-width: 820px) {
+  .shot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.shot {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(11, 18, 32, 0.35);
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.shot figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* Make cards feel more premium */
+.card ul {
+  margin-top: 8px;
+}
+
+.card li {
+  margin: 4px 0;
+}

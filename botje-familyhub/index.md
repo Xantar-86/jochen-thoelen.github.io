@@ -87,3 +87,18 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 - Google Calendar API
 - JavaScript / TypeScript
 - Environment variables & cloud config
+---
+
+## Screenshots
+
+<div class="shot-grid">
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/placeholder-1.png" alt="Botje screenshot 1">
+    <figcaption>Voorbeeld: dashboard of agenda (placeholder).</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/placeholder-2.png" alt="Botje screenshot 2">
+    <figcaption>Voorbeeld: instellingen of calendar sync (placeholder).</figcaption>
+  </figure>
+</div>

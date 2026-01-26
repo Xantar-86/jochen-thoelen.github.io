@@ -72,3 +72,18 @@ Doel: een **schaalbare en onderhoudsvriendelijke** domeinstructuur.
 - Group Policy
 - DFS & NTFS permissions
 - RSAT / MMC
+---
+
+## Screenshots
+
+<div class="shot-grid">
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/ad/placeholder-1.png" alt="AD screenshot 1">
+    <figcaption>Voorbeeld: OU-structuur en domeinopbouw (placeholder).</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/ad/placeholder-2.png" alt="AD screenshot 2">
+    <figcaption>Voorbeeld: GPO of fileshare permissies (placeholder).</figcaption>
+  </figure>
+</div>
