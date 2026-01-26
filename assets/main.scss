@@ -521,3 +521,34 @@ body.theme-home .badge {
 .card li {
   margin: 4px 0;
 }
+/* FIX: badges/pills must stay compact (no big blocks) */
+.badge-row,
+.pill-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.badge,
+.pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  line-height: 1 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+.badge::before,
+.badge::after,
+.pill::before,
+.pill::after {
+  content: none !important;
+}
