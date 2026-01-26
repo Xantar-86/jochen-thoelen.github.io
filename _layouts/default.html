@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: "nl" }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+
+    <main class="site-main">
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">{{ site.description | default: "IT-portfolio" }}</p>
+          <h1 class="page-title">{{ page.title }}</h1>
+
+          {% if page.url == "/" or page.url == site.baseurl or page.url == site.baseurl | append: "/" %}
+            <p class="lead">
+              Praktijkgerichte projecten rond infrastructuur, automatisatie en probleemoplossing.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="{{ '/ad-electro/' | relative_url }}">Bekijk AD project</a>
+              <a class="btn" href="{{ '/botje-familyhub/' | relative_url }}">Bekijk Botje</a>
+            </div>
+          {% else %}
+            <p class="lead muted">
+              Projectdetail en aanpak, met focus op structuur, security en betrouwbaarheid.
+            </p>
+          {% endif %}
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container prose">
+          {{ content }}
+        </div>
+      </section>
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>
