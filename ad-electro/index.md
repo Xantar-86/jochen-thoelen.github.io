@@ -87,3 +87,18 @@ Doel: een **schaalbare en onderhoudsvriendelijke** domeinstructuur.
     <figcaption>Voorbeeld: GPO of fileshare permissies (placeholder).</figcaption>
   </figure>
 </div>
+---
+
+## Screenshots
+
+<div class="shot-grid">
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/PLACEHOLDER/shot1.png" alt="Screenshot 1">
+    <figcaption>Korte uitleg bij screenshot 1.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/PLACEHOLDER/shot2.png" alt="Screenshot 2">
+    <figcaption>Korte uitleg bij screenshot 2.</figcaption>
+  </figure>
+</div>
