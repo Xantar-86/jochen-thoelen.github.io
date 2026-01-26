@@ -6,7 +6,7 @@ Welkom! Dit portfolio geeft een overzicht van praktijkgerichte IT-projecten waar
 
 ## Projecten
 
-### 1) Active Directory & Windows Server – *Electro*
+### 1) - **Active Directory & Windows Server (Electro)** - [detailpagina](ad-electro.md)
 
 **Context**: Ontwerp en implementatie van een bedrijfsomgeving voor een fictief bedrijf.
 
