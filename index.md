@@ -76,5 +76,5 @@ Welkom! Dit portfolio geeft een overzicht van praktijkgerichte IT-projecten waar
 
 ## Contact
 
-* LinkedIn: https://www.linkedin.com/in/jochen-thoelen-b83106189
+* LinkedIn: [https://www.linkedin.com/in/jochen-thoelen-b83106189/](https://www.linkedin.com/in/jochen-thoelen-b83106189/)
 * Portfolio: [https://xantar-86.github.io/jochen-thoelen.github.io/](https://xantar-86.github.io/jochen-thoelen.github.io/)
