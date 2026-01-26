@@ -1,4 +1,6 @@
-# Botje / Family Hub - Automatisatie en Web
+---
+title: Botje / Family Hub
+---
 
 [Terug naar home](index.md)
 

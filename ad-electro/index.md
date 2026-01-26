@@ -1,57 +1,74 @@
 ---
-layout: home
-title: Jochen Thoelen - Portfolio
+title: Active Directory & Windows Server – Electro
 ---
 
-Welkom! Dit portfolio geeft een overzicht van praktijkgerichte IT-projecten waarin ik infrastructuur, automatisatie en probleemoplossing combineer.
+## Overzicht
 
-<div class="quick-nav">
-  <a class="btn" href="./">Home</a>
-  <a class="btn" href="ad-electro/">Active Directory</a>
-  <a class="btn" href="botje-familyhub/">Botje / Family Hub</a>
-</div>
+Dit project toont een volledige Active Directory-omgeving zoals opgezet voor een fictieve KMO (“Electro”), met focus op structuur, beveiliging en beheerbaarheid.
+
+De omgeving is opgezet volgens best practices en simuleert een realistische bedrijfscontext.
 
 ---
 
-## Projecten
+## Context
 
-<div class="card-grid">
-  <a class="card" href="ad-electro/">
-    <h3>Active Directory &amp; Windows Server (Electro)</h3>
-    <p class="muted">Bedrijfsomgeving: domein, OU-structuur, rechtenbeheer, GPO, fileshares en auditing.</p>
-    <ul>
-      <li>AGDLP model + logische OU structuur</li>
-      <li>Fileshares (DFS) + Access-Based Enumeration</li>
-      <li>GPO: logon scripts, drive mappings, folder redirection</li>
-      <li>Auditing op gevoelige mappen</li>
-    </ul>
-  </a>
+- Bedrijf met meerdere afdelingen
+- Centrale Windows Server omgeving
+- Gebruikers en computers beheerd via Active Directory
+- Toegang tot resources strikt geregeld via groepen en policies
 
-  <a class="card" href="botje-familyhub/">
-    <h3>Botje / Family Hub</h3>
-    <p class="muted">Eigen webapp: gezinsplanning met automatisatie en integraties (Supabase + Google Calendar).</p>
-    <ul>
-      <li>Next.js (App Router)</li>
-      <li>Supabase (database + auth)</li>
-      <li>Google Calendar API (service accounts)</li>
-      <li>Scheduling, notificaties, secure env handling</li>
-    </ul>
-  </a>
-</div>
+Doel: een **schaalbare en onderhoudsvriendelijke** domeinstructuur.
 
 ---
 
-## Vaardigheden (selectie)
+## Wat ik heb opgezet
 
-- Windows Server, Active Directory, GPO
-- Fileservers, DFS, NTFS, auditing
-- Automatisatie (scripts, policies)
-- Next.js, Supabase, REST/API integraties
-- Troubleshooting en documentatie
+### Active Directory structuur
+- Logische **OU-structuur** per afdeling
+- Scheiding tussen users, computers en servers
+- Voorbereid op groei en delegatie
+
+### Groepen & rechten (AGDLP)
+- Implementatie van het **AGDLP-model**
+- Duidelijke scheiding tussen:
+  - globale groepen (rollen)
+  - domein-lokale groepen (toegang)
+- Geen rechten rechtstreeks op gebruikers
+
+### Fileshares & opslag
+- Fileshares via **DFS**
+- **Access-Based Enumeration** actief
+- NTFS-rechten enkel via groepen
+- Structuur per afdeling en functie
+
+### Group Policy Objects (GPO)
+- Logon scripts
+- Drive mappings
+- Folder redirection
+- Beperking van gebruikersrechten
+- Consistente configuratie per OU
+
+### Auditing & beheer
+- Auditing op gevoelige mappen
+- Beheer via **MMC / RSAT**
+- Focus op traceerbaarheid en troubleshooting
 
 ---
 
-## Contact
+## Wat dit project aantoont
 
-- LinkedIn: <https://www.linkedin.com/in/jochen-thoelen-b83106189/>
-- Portfolio: <https://xantar-86.github.io/jochen-thoelen.github.io/>
+- Inzicht in **Active Directory design**
+- Correct gebruik van **security best practices**
+- Praktische ervaring met **Windows Server**
+- Gestructureerde aanpak van IT-infrastructuur
+- Documentatie- en beheergericht denken
+
+---
+
+## Gebruikte technologieën
+
+- Windows Server
+- Active Directory Domain Services
+- Group Policy
+- DFS & NTFS permissions
+- RSAT / MMC
