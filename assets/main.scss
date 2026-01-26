@@ -552,3 +552,17 @@ body.theme-home .badge {
 .pill::after {
   content: none !important;
 }
+/* Fix: keep badges inside the card flow (no right-side empty column) */
+.card {
+  display: block; /* ensure not split layout */
+}
+
+.card .badge-row,
+.card .pill-row {
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+.card ul {
+  margin-bottom: 10px;
+}
