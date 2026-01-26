@@ -1,30 +1,28 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: "nl" }}">
+<html lang="nl">
   <head>
-    {% include head.html %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   </head>
   <body>
-    {% include header.html %}
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="nav">
+          <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+          <a class="nav-link" href="{{ '/ad-electro/' | relative_url }}">Active Directory</a>
+          <a class="nav-link" href="{{ '/botje-familyhub/' | relative_url }}">Botje</a>
+        </nav>
+      </div>
+    </header>
 
     <main class="site-main">
       <section class="hero">
         <div class="container">
-          <p class="eyebrow">{{ site.description | default: "IT-portfolio" }}</p>
+          <p class="eyebrow">{{ site.description }}</p>
           <h1 class="page-title">{{ page.title }}</h1>
-
-          {% if page.url == "/" or page.url == site.baseurl or page.url == site.baseurl | append: "/" %}
-            <p class="lead">
-              Praktijkgerichte projecten rond infrastructuur, automatisatie en probleemoplossing.
-            </p>
-            <div class="cta-row">
-              <a class="btn primary" href="{{ '/ad-electro/' | relative_url }}">Bekijk AD project</a>
-              <a class="btn" href="{{ '/botje-familyhub/' | relative_url }}">Bekijk Botje</a>
-            </div>
-          {% else %}
-            <p class="lead muted">
-              Projectdetail en aanpak, met focus op structuur, security en betrouwbaarheid.
-            </p>
-          {% endif %}
         </div>
       </section>
 
@@ -35,6 +33,14 @@
       </section>
     </main>
 
-    {% include footer.html %}
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="muted">© {{ site.time | date: "%Y" }} {{ site.title }}</div>
+        <div class="footer-links">
+          <a href="https://github.com/xantar-86" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/jochen-thoelen-b83106189/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
