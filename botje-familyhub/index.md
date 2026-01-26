@@ -2,55 +2,88 @@
 title: Botje / Family Hub
 ---
 
-[Terug naar home](index.md)
-
 ## Overzicht
-Botje / Family Hub is een eigen webapplicatie rond gezinsplanning en automatisatie. De focus lag op een betrouwbare workflow, nette structuur, veilige configuratie en integratie met externe services.
 
-## Doelen
-- Een centrale plek voor planning en overzicht (family hub)
-- Automatisatie van terugkerende taken en reminders
-- Integratie met Google Calendar
-- Veilige handling van secrets en environment variables
-- Praktische troubleshooting en productiegericht denken
+Botje / Family Hub is een eigen webapplicatie rond gezinsplanning en automatisatie.  
+Het project focust op betrouwbaarheid, duidelijke structuur, veilige configuratie en integratie met externe services.
 
-## Technologie (high level)
+De applicatie simuleert een realistische productieomgeving waarin planning, notificaties en synchronisatie centraal staan.
+
+---
+
+## Context
+
+- Gezinsgerichte planning (family hub concept)
+- Meerdere gebruikers / contexten
+- Automatisatie van terugkerende taken
+- Integratie met externe APIs (Google Calendar)
+
+Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security en configuratie.
+
+---
+
+## Wat ik heb opgezet
+
+### Applicatiestructuur
+- Next.js met **App Router**
+- Duidelijke scheiding via route groups
+- Herbruikbare componenten en logische mappenstructuur
+
+### Data & authenticatie
+- **Supabase** als backend (database + auth)
+- Structuur per gezin / context
+- Dataconsistentie en validatie
+
+### Google Calendar integratie
+- Integratie via **Google Calendar API**
+- Gebruik van **service accounts**
+- Automatisch aanmaken en synchroniseren van kalenderitems
+
+### Configuratie & secrets
+- Geen hardcoded secrets
+- Environment variables via:
+  - `.env.local` (lokaal)
+  - Cloud environment settings
+- Duidelijke scheiding tussen test en productie
+
+---
+
+## Security & betrouwbaarheid
+
+- Secrets en credentials nooit in de code
+- Bewuste keuzes rond permissions en scopes
+- Correct omgaan met service account beperkingen
+- Stabiliteit en voorspelbaarheid boven snelle workarounds
+
+---
+
+## Troubleshooting & leerpunten
+
+- Oplossen van fouten rond:
+  - ontbrekende of foutieve environment variables
+  - Google Calendar permissions en attendees
+  - Next.js routing en duplicaten
+- Inzicht gekregen in:
+  - cloud-configuratie
+  - service account beperkingen
+  - reproduceerbare fixes en versiebeheer
+
+---
+
+## Wat dit project aantoont
+
+- Moderne webontwikkeling met Next.js
+- API-integratie in een realistische context
+- Security-bewust werken
+- Probleemoplossend vermogen bij niet-triviale issues
+- Gestructureerde en professionele aanpak
+
+---
+
+## Gebruikte technologieën
+
 - Next.js (App Router)
-- Supabase (database + auth)
-- Google Calendar API (service account)
-- Environment variables (.env.local en cloud settings)
-
-## Functionaliteit (voorbeelden)
-- Afspraken en reminders beheren
-- Kalenderitems aanmaken en synchroniseren via Google Calendar API
-- Rollen/structuur per gezin of context (familiegericht)
-- Validatie en foutafhandeling voor betrouwbaarheid
-
-## Security en betrouwbaarheid
-- Secrets nooit hardcoded; alles via environment variables
-- Scheiding tussen local config en cloud config
-- Edge cases rond service accounts en calendar permissions afgevangen
-- Stabiliteit boven "snelle hacks"
-
-## Troubleshooting highlights (wat ik heb opgelost/geleerd)
-- Correcte configuratie van environment variables (local en cloud)
-- Service account beperkingen rond invites/attendees en praktische workarounds
-- Structuur in Next.js App Router en route groups
-- Debugging van fouten door verkeerde paths, duplicaten of backups
-- Consistente werkwijze met versiebeheer en reproduceerbare fixes
-
-## Wat dit project toont
-- Moderne webstack en API-integratie
-- Cloud-aware denken (config, secrets, service accounts)
-- Probleemoplossend vermogen met realistische issues
-- Documenteren en iteratief verbeteren
-
-## Screenshots (optioneel)
-Later kan je hier screenshots toevoegen:
-- app UI (dashboard/agenda)
-- projectstructuur (zonder secrets)
-- voorbeeld van logging/monitoring
-- voorbeeld van deployment settings (zonder gevoelige data)
-
-## Conclusie
-Dit project toont mijn interesse en ervaring in automatisatie en praktische webontwikkeling, met focus op betrouwbaarheid, security en onderhoudbaarheid.
+- Supabase (database & auth)
+- Google Calendar API
+- JavaScript / TypeScript
+- Environment variables & cloud config
