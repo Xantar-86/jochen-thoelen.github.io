@@ -48,11 +48,20 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
 ## Projecten
 
 <div class="card-grid reveal">
+
   <a class="card" href="/jochen-thoelen.github.io/ad-electro/">
     <h3>Active Directory &amp; Windows Server (Electro)</h3>
     <p class="muted">
       Realistische Windows Server omgeving voor een KMO, met focus op structuur, rechtenbeheer en beheerbaarheid.
     </p>
+
+    <div class="badge-row">
+      <span class="badge">Windows Server</span>
+      <span class="badge">Active Directory</span>
+      <span class="badge">GPO</span>
+      <span class="badge">DFS/NTFS</span>
+    </div>
+
     <ul>
       <li>OU-structuur en AD design</li>
       <li>AGDLP model en groepsbeheer</li>
@@ -60,18 +69,20 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
       <li>GPO en auditing</li>
     </ul>
   </a>
-<div class="badge-row">
-  <span class="badge">Windows Server</span>
-  <span class="badge">Active Directory</span>
-  <span class="badge">GPO</span>
-  <span class="badge">DFS/NTFS</span>
-</div>
 
   <a class="card" href="/jochen-thoelen.github.io/botje-familyhub/">
     <h3>Botje / Family Hub</h3>
     <p class="muted">
       Eigen webapplicatie rond gezinsplanning en automatisatie, met aandacht voor security en configuratie.
     </p>
+
+    <div class="badge-row">
+      <span class="badge">Next.js</span>
+      <span class="badge">Supabase</span>
+      <span class="badge">Google Calendar API</span>
+      <span class="badge">Automation</span>
+    </div>
+
     <ul>
       <li>Next.js (App Router)</li>
       <li>Supabase (database &amp; auth)</li>
@@ -79,15 +90,8 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
       <li>Environment variables &amp; cloud config</li>
     </ul>
   </a>
-  <div class="badge-row">
-  <span class="badge">Next.js</span>
-  <span class="badge">Supabase</span>
-  <span class="badge">Google Calendar API</span>
-  <span class="badge">Automation</span>
-</div>
-</div>
 
----
+</div>
 
 ## Contact
 
