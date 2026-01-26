@@ -20,11 +20,49 @@
 
     <main class="site-main">
       <section class="hero">
-        <div class="container">
-          <p class="eyebrow">{{ site.description }}</p>
-          <h1 class="page-title">{{ page.title }}</h1>
-        </div>
-      </section>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">{{ site.description }}</p>
+        <h1 class="page-title">{{ page.title }}</h1>
+
+        {% if page.url == "/" or page.url == site.baseurl or page.url == site.baseurl | append: "/" %}
+          <p class="lead">
+            Praktijkgerichte IT-projecten met focus op structuur, security en betrouwbaarheid.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">Windows Server</span>
+            <span class="pill">Active Directory</span>
+            <span class="pill">Automatisatie</span>
+            <span class="pill">Web / API</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="{{ '/ad-electro/' | relative_url }}">Bekijk AD project</a>
+            <a class="btn" href="{{ '/botje-familyhub/' | relative_url }}">Bekijk Botje</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/jochen-thoelen-b83106189/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        {% else %}
+          <p class="lead muted">
+            Projectdetail met aanpak, keuzes en resultaten.
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-title">Highlights</div>
+        <ul class="hero-list">
+          <li>Structuur en best practices (AD/GPO)</li>
+          <li>Security-first configuratie (secrets, roles)</li>
+          <li>Integraties met externe services (API)</li>
+          <li>Troubleshooting met reproduceerbare fixes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <section class="content">
         <div class="container prose">
