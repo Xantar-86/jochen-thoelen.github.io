@@ -15,11 +15,11 @@ De applicatie simuleert een realistische productieomgeving waarin planning, noti
 ## Context
 
 - Gezinsgerichte planning (family hub concept)
-- Meerdere gebruikers / contexten
+- Meerdere gebruikers en contexten
 - Automatisatie van terugkerende taken
-- Integratie met externe APIs (Google Calendar)
+- Integratie met externe APIs (o.a. Google Calendar)
 
-Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security en configuratie.
+Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security, configuratie en uitbreidbaarheid.
 
 ---
 
@@ -31,28 +31,28 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 - Herbruikbare componenten en logische mappenstructuur
 
 ### Data & authenticatie
-- **Supabase** als backend (database + auth)
+- **Supabase** als backend (database + authentication)
 - Structuur per gezin / context
-- Dataconsistentie en validatie
+- Dataconsistentie en server-side validatie
 
 ### Google Calendar integratie
 - Integratie via **Google Calendar API**
 - Gebruik van **service accounts**
-- Automatisch aanmaken en synchroniseren van kalenderitems
+- Automatisch aanmaken en synchroniseren van kalenderitems en reminders
 
 ### Configuratie & secrets
 - Geen hardcoded secrets
 - Environment variables via:
   - `.env.local` (lokaal)
-  - Cloud environment settings
-- Duidelijke scheiding tussen test en productie
+  - cloud environment settings
+- Duidelijke scheiding tussen test- en productieconfiguratie
 
 ---
 
 ## Security & betrouwbaarheid
 
-- Secrets en credentials nooit in de code
-- Bewuste keuzes rond permissions en scopes
+- Secrets en credentials nooit in frontend code
+- Bewuste keuzes rond permissions en API scopes
 - Correct omgaan met service account beperkingen
 - Stabiliteit en voorspelbaarheid boven snelle workarounds
 
@@ -60,11 +60,11 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 
 ## Troubleshooting & leerpunten
 
-- Oplossen van fouten rond:
+- Oplossen van issues rond:
   - ontbrekende of foutieve environment variables
   - Google Calendar permissions en attendees
   - Next.js routing en duplicaten
-- Inzicht gekregen in:
+- Inzicht opgedaan in:
   - cloud-configuratie
   - service account beperkingen
   - reproduceerbare fixes en versiebeheer
@@ -84,10 +84,11 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 ## Gebruikte technologieën
 
 - Next.js (App Router)
-- Supabase (database & auth)
+- Supabase (database & authentication)
 - Google Calendar API
 - JavaScript / TypeScript
-- Environment variables & cloud config
+- Environment variables & cloud configuration
+
 ---
 
 ## Screenshots
@@ -128,11 +129,11 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
     </figcaption>
   </figure>
 
-<figure class="shot reveal">
+  <figure class="shot reveal">
     <img src="/jochen-thoelen.github.io/assets/images/botje/klantenkaarten2.jpg" alt="Digitale klantenkaarten">
     <figcaption>
-      <strong>Digitale klantenkaarten</strong><br>
-      Mobiele klantenkaarten met QR-code, fullscreen scanbaar aan de kassa.
+      <strong>Digitale klantenkaarten (detail)</strong><br>
+      Alternatieve weergave met focus op leesbaarheid en snelle scan.
     </figcaption>
   </figure>
 
@@ -149,42 +150,40 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
     <figcaption>
       <strong>Chat & automatisatie (Botje)</strong><br>
       Natuurlijke taalinterface om agenda-items en reminders aan te maken,
-      inclusief foutafhandeling en bevestiging.
+      inclusief validatie, foutafhandeling en bevestiging.
     </figcaption>
   </figure>
+
+</div>
+
 ---
 
-## Technische highlights (per screenshot)
+## Technische highlights (per functionaliteit)
 
-### 1) Dashboard & modules
-- Modulair opgezet (UI components per feature: agenda, bestanden, boodschappen, directory).
-- Consistente styling (dark/light mode) met herbruikbare kaart-layouts.
-- Focus op eenvoud voor niet-technische gebruikers.
+### Dashboard & modules
+- Modulaire UI-components per feature (agenda, bestanden, boodschappen).
+- Consistente styling met ondersteuning voor dark/light mode.
+- Ontworpen met focus op eenvoud voor niet-technische gebruikers.
 
-### 2) Gezinsagenda (Google Calendar)
-- Integratie met Google Calendar API (service accounts).
-- Events + reminders met duidelijke “scope” (shared vs personal).
-- Betrouwbare sync + foutafhandeling (herhaalbaar, geen “silent failures”).
+### Gezinsagenda
+- Integratie met Google Calendar via service accounts.
+- Duidelijke scheiding tussen gedeelde en persoonlijke events.
+- Betrouwbare synchronisatie met gecontroleerde foutafhandeling.
 
-### 3) Boodschappen per winkel
-- Data-structuur per winkel + lijst (filteren en groeperen).
-- Mobile-first: afvinken in de winkel met snelle UI.
-- Voorbereid op uitbreidingen (favorieten winkels, QR/kaart koppeling).
+### Boodschappen & klantenkaarten
+- Data-structuur per winkel en lijst.
+- Mobile-first gebruik in de winkel.
+- QR-codes fullscreen scanbaar aan de kassa.
 
-### 4) Digitale klantenkaarten
-- QR-codes in fullscreen modus: scanbaar aan de kassa.
-- Per winkel een kaart, met snelle toegang vanuit de lijst.
-- UX detail: tips en minimale handelingen in de winkel.
+### Bestandenbeheer
+- OneDrive-integratie voor gedeelde opslag.
+- Basis bestandsbeheer (upload, mappen, verwijderen).
+- Geen secrets of tokens in de client.
 
-### 5) Bestanden & mappen
-- OneDrive integratie voor gedeelde map (family hub).
-- Basis bestandsbeheer: uploaden, mappen maken, hernoemen/verwijderen.
-- Toegangscontrole en veilige koppelingen (geen secrets in de client).
-
-### 6) Chat & automatisatie (Botje)
-- Natuurlijke taal input → gestructureerde acties (agenda, reminders).
-- Validatie en guardrails (bv. foutmeldingen bij onmogelijke reminder tijden).
-- Logging/feedback richting gebruiker: “wat is aangemaakt, duplicaten, errors”.
+### Chat & automatisatie
+- Natuurlijke taalinput om acties te triggeren.
+- Server-side validatie en guardrails.
+- Transparante feedback richting gebruiker.
 
 ---
 
@@ -202,40 +201,8 @@ Next.js API routes (server-side)
   |
   +--> Supabase
   |      - Auth (login & sessies)
-  |      - Database (Postgres)
+  |      - Database (PostgreSQL)
   |
   +--> Externe services
          - Google Calendar API
          - OneDrive / Microsoft Graph
-
-
-⚠️ Belangrijk:
-- Laat **alle spaties en streepjes staan**
-- De ```text bovenaan en ``` onderaan **moeten er zijn**
-- Niets aanpassen
-
----
-
-# 👀 Wat zie je daarna op je website?
-Op de Botje-pagina zie je straks:
-
-- Titel: **Architectuur (overzicht)**
-- Daaronder een **grijs tekstblok**
-- Met pijltjes en structuur
-- Iedereen snapt: *“aha, zo werkt dit”*
-
-👉 Dit is PERFECT voor recruiters.
-
----
-
-# ✅ Stap 4 — Opslaan & online zetten
-In PowerShell:
-
-```powershell
-cd "C:\Users\joche\Documents\portfolio-site"
-git add botje-familyhub/index.md
-git commit -m "Add simple architecture overview to Botje page"
-git push
-
-</div>
-
