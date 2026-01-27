@@ -45,7 +45,7 @@ Onderstaande schematische weergave toont hoe gebruikers, Active Directory, files
 
 <figure class="shot reveal">
   <img
-    src="/jochen-thoelen.github.io/assets/images/ad/architectuur.jpg"
+    src="/jochen-thoelen.github.io/assets/images/ad/ADusers.jpg"
     alt="Active Directory architectuur"
     loading="lazy"
   >
@@ -136,7 +136,7 @@ Onderstaande schematische weergave toont hoe gebruikers, Active Directory, files
 
   <figure class="shot reveal">
     <img
-      src="/jochen-thoelen.github.io/assets/images/ad/adusers.jpg"
+      src="/jochen-thoelen.github.io/assets/images/ad/ADusers.jpg"
       alt="Active Directory groepen"
       loading="lazy"
     >

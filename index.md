@@ -3,20 +3,21 @@ title: Jochen Thoelen - Portfolio
 ---
 
 Welkom!  
-Op deze website toon ik praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling.
+Dit portfolio toont **praktijkgerichte IT-projecten** rond infrastructuur, automatisatie en webontwikkeling.
 
-De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-cases.
+De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-cases zoals die in professionele IT-omgevingen voorkomen.
 
 ---
 
-## Highlights
+## Waar ik op focus
 
 <div class="feature-grid">
 
   <div class="feature reveal">
     <div class="feature-title">Infrastructuur &amp; security</div>
     <div class="feature-text">
-      AD-ontwerp, GPO, rechtenbeheer en beheerbaarheid volgens best practices.
+      Ontwerp en beheer van Active Directory omgevingen met aandacht
+      voor structuur, security en onderhoudbaarheid.
     </div>
     <div class="pill-row">
       <span class="pill">Windows Server</span>
@@ -26,21 +27,23 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
   </div>
 
   <div class="feature reveal">
-    <div class="feature-title">Automatisatie</div>
+    <div class="feature-title">Automatisatie &amp; beheer</div>
     <div class="feature-text">
-      Reproduceerbare oplossingen, duidelijke workflows en troubleshooting zonder hacks.
+      Reproduceerbare oplossingen, duidelijke workflows en troubleshooting
+      zonder quick-fixes of hacks.
     </div>
     <div class="pill-row">
       <span class="pill">Policies</span>
       <span class="pill">Scripts</span>
-      <span class="pill">Process</span>
+      <span class="pill">Processen</span>
     </div>
   </div>
 
   <div class="feature reveal">
     <div class="feature-title">Web &amp; integraties</div>
     <div class="feature-text">
-      Moderne webstack met externe services en veilige configuratie (secrets).
+      Moderne webstack met externe services en veilige configuratie
+      van secrets en omgevingen.
     </div>
     <div class="pill-row">
       <span class="pill">Next.js</span>
@@ -61,8 +64,8 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
     <h3>Active Directory &amp; Windows Server (Electro)</h3>
 
     <p class="muted">
-      Realistische Windows Server omgeving voor een KMO, met focus op structuur,
-      rechtenbeheer en beheerbaarheid.
+      Realistische Windows Server infrastructuur voor een fictieve KMO,
+      met focus op structuur, rechtenbeheer en beheerbaarheid.
     </p>
 
     <div class="badge-row">
@@ -73,10 +76,10 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
     </div>
 
     <ul>
-      <li>OU-structuur en AD design</li>
-      <li>AGDLP model en groepsbeheer</li>
-      <li>Fileshares, DFS en NTFS permissies</li>
-      <li>GPO en auditing</li>
+      <li>Doordachte OU-structuur en AD design</li>
+      <li>AGDLP-model voor role-based access</li>
+      <li>Fileshares, DFS en NTFS-permissies</li>
+      <li>Group Policy en auditing</li>
     </ul>
   </a>
 
@@ -85,7 +88,7 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
 
     <p class="muted">
       Eigen webapplicatie rond gezinsplanning en automatisatie,
-      met aandacht voor security en configuratie.
+      met aandacht voor security, configuratie en integraties.
     </p>
 
     <div class="badge-row">
@@ -96,8 +99,8 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
     </div>
 
     <ul>
-      <li>Next.js (App Router)</li>
-      <li>Supabase (database &amp; auth)</li>
+      <li>Next.js (App Router) frontend</li>
+      <li>Supabase voor database &amp; authenticatie</li>
       <li>Google Calendar API integratie</li>
       <li>Environment variables &amp; cloud config</li>
     </ul>
@@ -113,7 +116,7 @@ De focus ligt op **structuur, security, betrouwbaarheid** en realistische use-ca
   <div class="cta-left">
     <div class="cta-title">Interesse in mijn profiel?</div>
     <div class="cta-text">
-      Bekijk mijn LinkedIn of contacteer me rechtstreeks.
+      Bekijk mijn LinkedIn of neem contact op voor meer informatie.
     </div>
   </div>
 
