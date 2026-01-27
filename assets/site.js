@@ -5,12 +5,17 @@
   }
 
   ready(function () {
-    // Reveal
+    /* ---------------------------
+       Reveal on scroll
+    --------------------------- */
     var items = document.querySelectorAll(".reveal");
     if (items.length) {
-      var mq = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+      var mq =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)");
       if (mq && mq.matches) {
-        for (var r = 0; r < items.length; r++) items[r].classList.add("in-view");
+        for (var r = 0; r < items.length; r++)
+          items[r].classList.add("in-view");
       } else if ("IntersectionObserver" in window) {
         var io = new IntersectionObserver(
           function (entries) {
@@ -25,11 +30,14 @@
         );
         for (var j = 0; j < items.length; j++) io.observe(items[j]);
       } else {
-        for (var k = 0; k < items.length; k++) items[k].classList.add("in-view");
+        for (var k = 0; k < items.length; k++)
+          items[k].classList.add("in-view");
       }
     }
 
-    // Active nav highlight
+    /* ---------------------------
+       Active nav highlight
+    --------------------------- */
     var path = window.location.pathname.replace(/\/+$/, "/");
     var navLinks = document.querySelectorAll(".nav-link");
     for (var n = 0; n < navLinks.length; n++) {
@@ -41,7 +49,9 @@
       if (target === path) navLinks[n].classList.add("active");
     }
 
-    // Back to top
+    /* ---------------------------
+       Back to top
+    --------------------------- */
     var btn = document.querySelector(".to-top");
     if (btn) {
       btn.addEventListener("click", function () {
@@ -55,13 +65,39 @@
       window.addEventListener("scroll", onScroll, { passive: true });
       onScroll();
     }
+
+    /* ---------------------------
+       Card glow follows mouse
+    --------------------------- */
+    var reduceMotion =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!reduceMotion) {
+      document.addEventListener("mousemove", function (e) {
+        var card = e.target.closest
+          ? e.target.closest(".card")
+          : null;
+        if (!card) return;
+
+        var rect = card.getBoundingClientRect();
+        var mx = ((e.clientX - rect.left) / rect.width) * 100;
+        var my = ((e.clientY - rect.top) / rect.height) * 100;
+
+        card.style.setProperty("--mx", mx + "%");
+        card.style.setProperty("--my", my + "%");
+      });
+    }
   });
 })();
-// Lightbox for screenshots
+
+/* ---------------------------
+   Lightbox for screenshots
+--------------------------- */
 (function () {
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".lightbox-close");
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lightbox-img");
+  var closeBtn = document.querySelector(".lightbox-close");
 
   if (!lb || !lbImg || !closeBtn) return;
 
@@ -81,7 +117,9 @@
   }
 
   document.addEventListener("click", function (e) {
-    const img = e.target.closest(".shot-grid img");
+    var img = e.target.closest
+      ? e.target.closest(".shot-grid img")
+      : null;
     if (img) {
       e.preventDefault();
       openLightbox(img.getAttribute("src"), img.getAttribute("alt"));
