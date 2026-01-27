@@ -2,56 +2,175 @@
 title: Active Directory & Windows Server – Electro
 ---
 
-## Overzicht
+## Active Directory & Windows Server – Electro
 
-Dit project toont een volledige Active Directory-omgeving zoals opgezet voor een fictieve KMO (“Electro”), met focus op structuur, beveiliging en beheerbaarheid.
-
-De omgeving is opgezet volgens best practices en simuleert een realistische bedrijfscontext.
+Dit project toont een **realistische Active Directory-omgeving** zoals opgezet voor een fictieve KMO (“Electro”).  
+De focus ligt op **structuur, security, schaalbaarheid en beheerbaarheid**, volgens gangbare best practices in professionele IT-omgevingen.
 
 ---
 
-## Context
+## Context & doelstelling
 
-- Bedrijf met meerdere afdelingen
-- Centrale Windows Server omgeving
-- Gebruikers en computers beheerd via Active Directory
-- Toegang tot resources strikt geregeld via groepen en policies
+- Middelgrote organisatie met meerdere afdelingen  
+- Centrale Windows Server infrastructuur  
+- Gecentraliseerd gebruikers- en rechtenbeheer  
+- Strikte scheiding tussen gebruikers, computers en servers  
 
-Doel: een **schaalbare en onderhoudsvriendelijke** domeinstructuur.
+**Doel:**  
+Een **onderhoudsvriendelijke en uitbreidbare domeinstructuur** die eenvoudig te beheren is en duidelijke security-grenzen hanteert.
+
+---
+
+## Waarom deze setup?
+
+Deze omgeving is bewust opgezet volgens klassieke enterprise-principes:
+
+- duidelijke **OU-structuur** i.p.v. een “flat” AD
+- **AGDLP-model** voor toegangsbeheer
+- geen rechten rechtstreeks op gebruikers
+- auditing en logging standaard voorzien
+- fileshares en policies schaalbaar per afdeling
+
+Dit zorgt voor:
+- minder fouten bij groei
+- eenvoudiger troubleshooting
+- betere security-controle
+- duidelijke overdraagbaarheid naar andere beheerders
+
+---
+
+## Architectuur (overzicht)
+
+Onderstaande schematische weergave toont hoe gebruikers, Active Directory, fileservers en policies samenwerken binnen de omgeving.
+
+<figure class="shot reveal">
+  <img
+    src="/jochen-thoelen.github.io/assets/images/ad/architectuur.jpg"
+    alt="Active Directory architectuur"
+    loading="lazy"
+  >
+  <figcaption>
+    <strong>Architectuur overzicht</strong><br>
+    Gebruikers authenticeren via Active Directory. Toegang tot fileshares en resources verloopt via groepslidmaatschappen, GPO’s en NTFS-rechten, beheerd vanuit een centrale Windows Server omgeving.
+  </figcaption>
+</figure>
 
 ---
 
 ## Wat ik heb opgezet
 
 ### Active Directory structuur
-- Logische **OU-structuur** per afdeling
-- Scheiding tussen users, computers en servers
-- Voorbereid op groei en delegatie
+- Logische **OU-structuur per afdeling**
+- Scheiding tussen:
+  - users
+  - computers
+  - servers
+- Voorbereid op delegatie en groei
 
 ### Groepen & rechten (AGDLP)
-- Implementatie van het **AGDLP-model**
-- Duidelijke scheiding tussen:
-  - globale groepen (rollen)
-  - domein-lokale groepen (toegang)
-- Geen rechten rechtstreeks op gebruikers
+- Correct gebruik van het **AGDLP-model**
+- Rollen via **globale groepen**
+- Toegang via **domain local groups**
+- Geen permissies rechtstreeks op gebruikers
 
 ### Fileshares & opslag
-- Fileshares via **DFS**
+- Fileshares beheerd via **Server Manager**
 - **Access-Based Enumeration** actief
-- NTFS-rechten enkel via groepen
+- NTFS-rechten uitsluitend via groepen
 - Structuur per afdeling en functie
 
 ### Group Policy Objects (GPO)
+- Password & account lockout policies
 - Logon scripts
 - Drive mappings
 - Folder redirection
-- Beperking van gebruikersrechten
 - Consistente configuratie per OU
 
 ### Auditing & beheer
-- Auditing op gevoelige mappen
-- Beheer via **MMC / RSAT**
+- File system auditing op gevoelige mappen
+- Inzicht in wie wat wanneer heeft geraadpleegd
+- Beheer via **RSAT / MMC**
 - Focus op traceerbaarheid en troubleshooting
+
+---
+
+## Screenshots (praktijkvoorbeelden)
+
+<div class="shot-grid">
+
+  <figure class="shot reveal">
+    <img
+      src="/jochen-thoelen.github.io/assets/images/ad/gpo.jpg"
+      alt="Default Domain Policy instellingen"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>Group Policy – Security policies</strong><br>
+      Password-, lockout- en Kerberos-instellingen centraal afgedwongen via de Default Domain Policy.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="/jochen-thoelen.github.io/assets/images/ad/shares.jpg"
+      alt="Fileshares overzicht"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>Fileshares & opslag</strong><br>
+      Overzicht van SMB-shares per server, met duidelijke scheiding tussen afdelingen en data-types.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="/jochen-thoelen.github.io/assets/images/ad/abe.jpg"
+      alt="Share permissies en ABE"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>NTFS-rechten & Access-Based Enumeration</strong><br>
+      Gebruikers zien enkel mappen waarvoor ze effectief rechten hebben.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="/jochen-thoelen.github.io/assets/images/ad/adusers.jpg"
+      alt="Active Directory groepen"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>AD-groepen volgens AGDLP</strong><br>
+      Duidelijke scheiding tussen rollen en toegangsrechten via groepsstructuur.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="/jochen-thoelen.github.io/assets/images/ad/audit.jpg"
+      alt="File auditing"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>Auditing & logging</strong><br>
+      File access wordt gelogd voor controle, security en troubleshooting.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="/jochen-thoelen.github.io/assets/images/ad/dfs.jpg"
+      alt="DFS SYSVOL"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>SYSVOL & replicatie</strong><br>
+      Policies en scripts consistent beschikbaar via SYSVOL replicatie.
+    </figcaption>
+  </figure>
+
+</div>
 
 ---
 
@@ -61,44 +180,15 @@ Doel: een **schaalbare en onderhoudsvriendelijke** domeinstructuur.
 - Correct gebruik van **security best practices**
 - Praktische ervaring met **Windows Server**
 - Gestructureerde aanpak van IT-infrastructuur
-- Documentatie- en beheergericht denken
+- Denken in **beheerbaarheid en schaalbaarheid**
 
 ---
 
 ## Gebruikte technologieën
 
-- Windows Server
-- Active Directory Domain Services
-- Group Policy
-- DFS & NTFS permissions
-- RSAT / MMC
----
+- Windows Server  
+- Active Directory Domain Services  
+- Group Policy  
+- NTFS & DFS  
+- RSAT / MMC  
 
-## Screenshots
-
-<div class="shot-grid">
-  <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/ad/placeholder-1.png" alt="AD screenshot 1">
-    <figcaption>Voorbeeld: OU-structuur en domeinopbouw (placeholder).</figcaption>
-  </figure>
-
-  <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/ad/placeholder-2.png" alt="AD screenshot 2">
-    <figcaption>Voorbeeld: GPO of fileshare permissies (placeholder).</figcaption>
-  </figure>
-</div>
----
-
-## Screenshots
-
-<div class="shot-grid">
-  <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/PLACEHOLDER/shot1.png" alt="Screenshot 1">
-    <figcaption>Korte uitleg bij screenshot 1.</figcaption>
-  </figure>
-
-  <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/PLACEHOLDER/shot2.png" alt="Screenshot 2">
-    <figcaption>Korte uitleg bij screenshot 2.</figcaption>
-  </figure>
-</div>
