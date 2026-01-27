@@ -93,28 +93,65 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 ## Screenshots
 
 <div class="shot-grid">
+
   <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/botje/placeholder-1.png" alt="Botje screenshot 1">
-    <figcaption>Voorbeeld: dashboard of agenda (placeholder).</figcaption>
+    <img src="/jochen-thoelen.github.io/assets/images/botje/dashboard.jpg" alt="Botje dashboard">
+    <figcaption>
+      <strong>Dashboard & modules</strong><br>
+      Overzicht van beschikbare modules binnen de Family Hub (chat, agenda, bestanden, boodschappen),
+      met ondersteuning voor light & dark mode.
+    </figcaption>
   </figure>
 
   <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/botje/placeholder-2.png" alt="Botje screenshot 2">
-    <figcaption>Voorbeeld: instellingen of calendar sync (placeholder).</figcaption>
+    <img src="/jochen-thoelen.github.io/assets/images/botje/agenda.jpg" alt="Gezinsagenda">
+    <figcaption>
+      <strong>Gezinsagenda (Google Calendar integratie)</strong><br>
+      Centrale agenda met gedeelde en persoonlijke events, reminders en automatische synchronisatie
+      via Google Calendar API.
+    </figcaption>
   </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/boodschappen.jpg" alt="Boodschappenlijsten">
+    <figcaption>
+      <strong>Boodschappen per winkel</strong><br>
+      Dynamische boodschappenlijsten per winkel, realtime afvinken op mobiel en overzicht per locatie.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/klantenkaarten.jpg" alt="Digitale klantenkaarten">
+    <figcaption>
+      <strong>Digitale klantenkaarten</strong><br>
+      Mobiele klantenkaarten met QR-code, fullscreen scanbaar aan de kassa.
+    </figcaption>
+  </figure>
+
+<figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/klantenkaarten2.jpg" alt="Digitale klantenkaarten">
+    <figcaption>
+      <strong>Digitale klantenkaarten</strong><br>
+      Mobiele klantenkaarten met QR-code, fullscreen scanbaar aan de kassa.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/bestanden.jpg" alt="Bestandenbeheer">
+    <figcaption>
+      <strong>Bestanden & mappen</strong><br>
+      Gedeelde bestandsopslag via OneDrive-integratie, met upload, mappenstructuur en rechten per gezin.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/botje.jpg" alt="Botje chat interface">
+    <figcaption>
+      <strong>Chat & automatisatie (Botje)</strong><br>
+      Natuurlijke taalinterface om agenda-items en reminders aan te maken,
+      inclusief foutafhandeling en bevestiging.
+    </figcaption>
+  </figure>
+
 </div>
----
 
-## Screenshots
-
-<div class="shot-grid">
-  <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/PLACEHOLDER/shot1.png" alt="Screenshot 1">
-    <figcaption>Korte uitleg bij screenshot 1.</figcaption>
-  </figure>
-
-  <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/PLACEHOLDER/shot2.png" alt="Screenshot 2">
-    <figcaption>Korte uitleg bij screenshot 2.</figcaption>
-  </figure>
-</div>
