@@ -189,11 +189,14 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 
 ## Architectuur (overzicht)
 
-<figure class="shot reveal">
-    <img src="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}" alt="Architectuur Botje">
-    <figcaption>
-      <strong>Architectuur</strong><br>
-      Botje is opgebouwd als een server-side Next.js applicatie met duidelijke scheiding tussen frontend, API-logica en externe services. Authenticatie en data-opslag verlopen via Supabase, terwijl integraties (zoals Google Calendar en OneDrive) veilig via server-side API-routes worden afgehandeld.
-    </figcaption>
-  </figure>
-
+<figure class="shot reveal arch-figure">
+  <a href="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}" target="_blank" rel="noopener">
+    <img
+      src="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}"
+      alt="Botje - Architectuur overview">
+  </a>
+  <figcaption>
+    <strong>Architectuur</strong><br>
+    Next.js frontend (App Router) roept server-side API routes aan. Die API laag doet authenticatie, validatie en business logica, en praat met Supabase (auth + database) en externe services (Google Calendar, OneDrive/Graph). Klik op de afbeelding om te vergroten.
+  </figcaption>
+</figure>
