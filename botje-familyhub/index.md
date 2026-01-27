@@ -189,20 +189,26 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 
 ## Architectuur (overzicht)
 
+## Architectuur (overzicht)
+
 ```text
-Gebruiker (Browser)
+Gebruiker (browser)
   |
-  |  Gebruikersinterface (Next.js)
   v
-Next.js API routes (server-side)
+Frontend (Next.js – App Router)
   |
-  |  Authenticatie & validatie
-  |  Business logic
+  |  API-calls (server-side)
+  v
+Backend (Next.js API routes)
+  |
+  |-- Authenticatie & sessies
+  |-- Validatie & business logic
   |
   +--> Supabase
-  |      - Auth (login & sessies)
+  |      - Auth (login & sessions)
   |      - Database (PostgreSQL)
   |
   +--> Externe services
          - Google Calendar API
          - OneDrive / Microsoft Graph
+
