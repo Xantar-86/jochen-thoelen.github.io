@@ -152,6 +152,39 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
       inclusief foutafhandeling en bevestiging.
     </figcaption>
   </figure>
+---
+
+## Technische highlights (per screenshot)
+
+### 1) Dashboard & modules
+- Modulair opgezet (UI components per feature: agenda, bestanden, boodschappen, directory).
+- Consistente styling (dark/light mode) met herbruikbare kaart-layouts.
+- Focus op eenvoud voor niet-technische gebruikers.
+
+### 2) Gezinsagenda (Google Calendar)
+- Integratie met Google Calendar API (service accounts).
+- Events + reminders met duidelijke “scope” (shared vs personal).
+- Betrouwbare sync + foutafhandeling (herhaalbaar, geen “silent failures”).
+
+### 3) Boodschappen per winkel
+- Data-structuur per winkel + lijst (filteren en groeperen).
+- Mobile-first: afvinken in de winkel met snelle UI.
+- Voorbereid op uitbreidingen (favorieten winkels, QR/kaart koppeling).
+
+### 4) Digitale klantenkaarten
+- QR-codes in fullscreen modus: scanbaar aan de kassa.
+- Per winkel een kaart, met snelle toegang vanuit de lijst.
+- UX detail: tips en minimale handelingen in de winkel.
+
+### 5) Bestanden & mappen
+- OneDrive integratie voor gedeelde map (family hub).
+- Basis bestandsbeheer: uploaden, mappen maken, hernoemen/verwijderen.
+- Toegangscontrole en veilige koppelingen (geen secrets in de client).
+
+### 6) Chat & automatisatie (Botje)
+- Natuurlijke taal input → gestructureerde acties (agenda, reminders).
+- Validatie en guardrails (bv. foutmeldingen bij onmogelijke reminder tijden).
+- Logging/feedback richting gebruiker: “wat is aangemaakt, duplicaten, errors”.
 
 </div>
 

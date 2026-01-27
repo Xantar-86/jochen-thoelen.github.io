@@ -576,3 +576,128 @@ body.theme-home .badge {
 .badge, .pill {
   flex: 0 0 auto !important;
 }
+/* Active nav */
+.nav-link.active {
+  color: var(--text);
+  background: rgba(230, 237, 243, 0.08);
+  border: 1px solid var(--line);
+}
+
+/* Back to top */
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(15, 26, 46, 0.75);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.to-top:hover {
+  background: rgba(15, 26, 46, 0.92);
+}
+
+/* Better focus outlines (accessibility + premium feel) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(88, 166, 255, 0.55);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Smoother card hover */
+.card {
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(230, 237, 243, 0.24);
+}
+
+/* Headings a bit tighter */
+.prose h2 {
+  letter-spacing: -0.01em;
+}
+
+/* Reveal (if not already present) */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-inner {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.lightbox-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(20, 25, 35, 0.55);
+  color: #fff;
+  font-size: 28px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgba(20, 25, 35, 0.8);
+}
