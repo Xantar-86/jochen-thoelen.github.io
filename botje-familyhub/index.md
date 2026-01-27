@@ -189,26 +189,11 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 
 ## Architectuur (overzicht)
 
-## Architectuur (overzicht)
-
-```text
-Gebruiker (browser)
-  |
-  v
-Frontend (Next.js – App Router)
-  |
-  |  API-calls (server-side)
-  v
-Backend (Next.js API routes)
-  |
-  |-- Authenticatie & sessies
-  |-- Validatie & business logic
-  |
-  +--> Supabase
-  |      - Auth (login & sessions)
-  |      - Database (PostgreSQL)
-  |
-  +--> Externe services
-         - Google Calendar API
-         - OneDrive / Microsoft Graph
+<figure class="shot reveal">
+    <img src="/jochen-thoelen.github.io/assets/images/botje/architectuur.jpg" alt="Botje chat interface">
+    <figcaption>
+      <strong>Architectuur</strong><br>
+      Botje is opgebouwd als een server-side Next.js applicatie met duidelijke scheiding tussen frontend, API-logica en externe services. Authenticatie en data-opslag verlopen via Supabase, terwijl integraties (zoals Google Calendar en OneDrive) veilig via server-side API-routes worden afgehandeld.
+    </figcaption>
+  </figure>
 
