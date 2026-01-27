@@ -788,3 +788,59 @@ button:focus-visible {
 .shot-link img {
   display: block;
 }
+/* Micro-animations for project cards (subtle + professional) */
+.card {
+  position: relative;
+  transform: translateY(0);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.card:active {
+  transform: translateY(-1px);
+}
+
+/* Soft glow highlight on hover (very subtle) */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  background: radial-gradient(
+    800px circle at var(--mx, 50%) var(--my, 30%),
+    rgba(88, 166, 255, 0.12),
+    transparent 45%
+  );
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Keyboard focus = also looks premium */
+.card:focus-visible {
+  outline: 2px solid rgba(88, 166, 255, 0.55);
+  outline-offset: 3px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  .card:hover {
+    transform: none;
+  }
+  .card::after {
+    display: none;
+  }
+}
