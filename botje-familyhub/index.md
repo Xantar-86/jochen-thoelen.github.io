@@ -105,7 +105,7 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
   </figure>
 
   <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/botje/Agenda.jpg" alt="Gezinsagenda">
+    <img src="{{ '/assets/images/botje/Agenda.jpg' | relative_url }}" alt="Gezinsagenda">
     <figcaption>
       <strong>Gezinsagenda (Google Calendar integratie)</strong><br>
       Centrale agenda met gedeelde en persoonlijke events, reminders en automatische synchronisatie
@@ -190,7 +190,7 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 ## Architectuur (overzicht)
 
 <figure class="shot reveal">
-    <img src="/jochen-thoelen.github.io/assets/images/botje/architectuur.jpg" alt="Botje chat interface">
+    <img src="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}" alt="Architectuur Botje">
     <figcaption>
       <strong>Architectuur</strong><br>
       Botje is opgebouwd als een server-side Next.js applicatie met duidelijke scheiding tussen frontend, API-logica en externe services. Authenticatie en data-opslag verlopen via Supabase, terwijl integraties (zoals Google Calendar en OneDrive) veilig via server-side API-routes worden afgehandeld.
