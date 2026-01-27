@@ -190,13 +190,21 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 ## Architectuur (overzicht)
 
 <figure class="shot reveal arch-figure">
-  <a href="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}" target="_blank" rel="noopener">
-    <img
-      src="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}"
-      alt="Botje - Architectuur overview">
+  <a class="shot-link" href="#arch-lightbox" title="Klik om te vergroten">
+    <img src="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}" alt="Architectuur Botje (overzicht)">
   </a>
   <figcaption>
     <strong>Architectuur</strong><br>
-    Next.js frontend (App Router) roept server-side API routes aan. Die API laag doet authenticatie, validatie en business logica, en praat met Supabase (auth + database) en externe services (Google Calendar, OneDrive/Graph). Klik op de afbeelding om te vergroten.
+    Next.js (App Router) rendert de UI en praat server-side met API routes. Die API routes doen auth/validatie/business logic en praten met Supabase (auth + Postgres). Integraties (Google Calendar, OneDrive/Graph) lopen veilig via server-side routes.
   </figcaption>
 </figure>
+
+<div id="arch-lightbox" class="lightbox" aria-label="Architectuur afbeelding (vergroot)">
+  <a class="lightbox-close" href="#_" aria-label="Sluiten">×</a>
+  <div class="lightbox-inner">
+    <img src="{{ '/assets/images/botje/architectuur.jpg' | relative_url }}" alt="Architectuur Botje (vergroot)">
+  </div>
+</div>
+
+
+

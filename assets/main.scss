@@ -670,6 +670,11 @@ button:focus-visible {
   display: flex;
 }
 
+.lightbox:target {
+  display: flex;
+}
+
+
 .lightbox-inner {
   max-width: 1100px;
   width: 100%;
@@ -684,6 +689,10 @@ button:focus-visible {
 }
 
 .lightbox-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   position: absolute;
   top: 14px;
   right: 18px;
@@ -702,22 +711,20 @@ button:focus-visible {
   background: rgba(20, 25, 35, 0.8);
 }
 .arch-figure {
-  margin: 16px auto 0;
-  max-width: 760px;
-  width: 100%;
-  text-align: left;
+  max-width: 720px;
+  margin: 2.5rem auto;
+  text-align: center;
 }
 
 .arch-figure img {
-  display: block;
   width: 100%;
   height: auto;
   max-height: 420px;
   object-fit: contain;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(0,0,0,0.20);
   cursor: zoom-in;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .arch-figure img:hover {
@@ -726,16 +733,10 @@ button:focus-visible {
 }
 
 .arch-figure figcaption {
-  margin-top: 10px;
+  margin-top: 0.9rem;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.75);
+  color: #b8c1cc;
 }
-
-@media (max-width: 900px) {
-  .arch-figure { max-width: 100%; }
-  .arch-figure img { max-height: 320px; }
-}
-
 .shot-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -776,4 +777,14 @@ button:focus-visible {
   font-size: 0.95rem;
   color: #b8c1cc;
   line-height: 1.35;
+}
+
+
+.shot-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.shot-link img {
+  display: block;
 }
