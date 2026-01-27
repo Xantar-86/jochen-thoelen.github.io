@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<meta name="theme-color" content="#0b1220">
+
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling, met focus op structuur, security, betrouwbaarheid en realistische use-cases.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:image" content="https://xantar-86.github.io/jochen-thoelen.github.io/assets/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{{ site.description }}">
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/og.png">
   </head>
   <script defer src="{{ '/assets/site.js' | relative_url }}"></script>
   <body class="{% if page.url == '/' %}theme-home{% else %}theme-page{% endif %}">
@@ -81,5 +94,7 @@
         </div>
       </div>
     </footer>
+    <button class="to-top" type="button" aria-label="Back to top">↑</button>
+<script defer src="{{ '/assets/site.js' | relative_url }}"></script>
   </body>
 </html>

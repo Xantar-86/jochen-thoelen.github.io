@@ -1,5 +1,6 @@
 ---
 title: Botje / Family Hub
+layout: default
 ---
 
 ## Overzicht
