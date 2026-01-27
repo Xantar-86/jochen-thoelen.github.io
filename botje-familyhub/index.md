@@ -186,5 +186,56 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
 - Validatie en guardrails (bv. foutmeldingen bij onmogelijke reminder tijden).
 - Logging/feedback richting gebruiker: “wat is aangemaakt, duplicaten, errors”.
 
+---
+
+## Architectuur (overzicht)
+
+```text
+Gebruiker (Browser)
+  |
+  |  Gebruikersinterface (Next.js)
+  v
+Next.js API routes (server-side)
+  |
+  |  Authenticatie & validatie
+  |  Business logic
+  |
+  +--> Supabase
+  |      - Auth (login & sessies)
+  |      - Database (Postgres)
+  |
+  +--> Externe services
+         - Google Calendar API
+         - OneDrive / Microsoft Graph
+
+
+⚠️ Belangrijk:
+- Laat **alle spaties en streepjes staan**
+- De ```text bovenaan en ``` onderaan **moeten er zijn**
+- Niets aanpassen
+
+---
+
+# 👀 Wat zie je daarna op je website?
+Op de Botje-pagina zie je straks:
+
+- Titel: **Architectuur (overzicht)**
+- Daaronder een **grijs tekstblok**
+- Met pijltjes en structuur
+- Iedereen snapt: *“aha, zo werkt dit”*
+
+👉 Dit is PERFECT voor recruiters.
+
+---
+
+# ✅ Stap 4 — Opslaan & online zetten
+In PowerShell:
+
+```powershell
+cd "C:\Users\joche\Documents\portfolio-site"
+git add botje-familyhub/index.md
+git commit -m "Add simple architecture overview to Botje page"
+git push
+
 </div>
 
