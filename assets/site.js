@@ -66,28 +66,28 @@
       onScroll();
     }
 
-    /* ---------------------------
-       Card glow follows mouse
-    --------------------------- */
-    var reduceMotion =
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* ---------------------------
+   Glow follows mouse (cards, screenshots, buttons)
+--------------------------- */
+var reduceMotion =
+  window.matchMedia &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!reduceMotion) {
-      document.addEventListener("mousemove", function (e) {
-        var card = e.target.closest
-          ? e.target.closest(".card")
-          : null;
-        if (!card) return;
+if (!reduceMotion) {
+  document.addEventListener("mousemove", function (e) {
+    var el = e.target.closest ? e.target.closest(".card, .shot, .btn") : null;
+    if (!el) return;
 
-        var rect = card.getBoundingClientRect();
-        var mx = ((e.clientX - rect.left) / rect.width) * 100;
-        var my = ((e.clientY - rect.top) / rect.height) * 100;
+    var rect = el.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
 
-        card.style.setProperty("--mx", mx + "%");
-        card.style.setProperty("--my", my + "%");
-      });
-    }
+    var mx = ((e.clientX - rect.left) / rect.width) * 100;
+    var my = ((e.clientY - rect.top) / rect.height) * 100;
+
+    el.style.setProperty("--mx", mx + "%");
+    el.style.setProperty("--my", my + "%");
+  });
+}
   });
 })();
 
