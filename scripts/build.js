@@ -10,7 +10,7 @@ const path = require('path');
 // HTML Template
 const getTemplate = (title, description, content, relativePath = './', activeNav = 'home') => `
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
