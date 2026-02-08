@@ -125,8 +125,8 @@ Doel: een **stabiele en onderhoudbare webapplicatie** met aandacht voor security
   </figure>
 
   <figure class="shot reveal">
-    <a href="{{ '/assets/images/botje/agenda.jpg' | relative_url }}" target="_blank">
-      <img src="{{ '/assets/images/botje/agenda.jpg' | relative_url }}" alt="Botje - Agenda"
+    <a href="{{ '/assets/images/botje/Agenda.jpg' | relative_url }}" target="_blank">
+      <img src="{{ '/assets/images/botje/Agenda.jpg' | relative_url }}" alt="Botje - Agenda"
       loading="lazy">
     </a>
     <figcaption><strong>Gezinsagenda</strong><br>Overzicht van gedeelde en persoonlijke events + sync met Google Calendar.</figcaption>
