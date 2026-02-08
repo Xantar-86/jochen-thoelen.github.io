@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "Jochen Thoelen - Portfolio website (Jekyll/GitHub Pages)",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "watch": "node scripts/build.js watch",
+    "dev": "npm run build && npx serve . -l 4000",
+    "serve": "npx serve . -l 4000",
+    "preview": "npm run build && npx serve . -l 4000"
+  },
+  "keywords": [
+    "portfolio",
+    "jekyll",
+    "github-pages"
+  ],
+  "author": "Jochen Thoelen",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "marked": "^11.1.1",
+    "serve": "^14.2.1"
+  }
+}

@@ -2,12 +2,24 @@
 title: Active Directory & Windows Server – Electro
 ---
 
-## Active Directory & Windows Server – Electro
+<!-- Page Header -->
+<section class="hero" style="min-height: 40vh; padding: 100px 0 40px;">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-greeting">Project</div>
+      <h1 class="hero-title">Active Directory & Windows Server – Electro</h1>
+      <p class="hero-description">
+        Een realistische Active Directory-omgeving voor een fictieve KMO,
+        met focus op structuur, security, schaalbaarheid en beheerbaarheid.
+      </p>
+    </div>
+  </div>
+</section>
 
-Dit project toont een **realistische Active Directory-omgeving** zoals opgezet voor een fictieve KMO (“Electro”).  
-De focus ligt op **structuur, security, schaalbaarheid en beheerbaarheid**, volgens gangbare best practices in professionele IT-omgevingen.
-
----
+<!-- Page Content -->
+<div class="page-content">
+  <div class="container">
 
 ## Context & doelstelling
 
@@ -25,7 +37,7 @@ Een **onderhoudsvriendelijke en uitbreidbare domeinstructuur** die eenvoudig te 
 
 Deze omgeving is bewust opgezet volgens klassieke enterprise-principes:
 
-- duidelijke **OU-structuur** i.p.v. een “flat” AD
+- duidelijke **OU-structuur** i.p.v. een "flat" AD
 - **AGDLP-model** voor toegangsbeheer
 - geen rechten rechtstreeks op gebruikers
 - auditing en logging standaard voorzien
@@ -43,7 +55,7 @@ Dit zorgt voor:
 
 Onderstaande schematische weergave toont hoe gebruikers, Active Directory, fileservers en policies samenwerken binnen de omgeving.
 
-<figure class="shot reveal">
+<figure class="shot reveal arch-figure">
   <img
     src="/jochen-thoelen.github.io/assets/images/ad/ADusers.jpg"
     alt="Active Directory architectuur"
@@ -51,7 +63,7 @@ Onderstaande schematische weergave toont hoe gebruikers, Active Directory, files
   >
   <figcaption>
     <strong>Architectuur overzicht</strong><br>
-    Gebruikers authenticeren via Active Directory. Toegang tot fileshares en resources verloopt via groepslidmaatschappen, GPO’s en NTFS-rechten, beheerd vanuit een centrale Windows Server omgeving.
+    Gebruikers authenticeren via Active Directory. Toegang tot fileshares en resources verloopt via groepslidmaatschappen, GPO's en NTFS-rechten, beheerd vanuit een centrale Windows Server omgeving.
   </figcaption>
 </figure>
 
@@ -186,9 +198,13 @@ Onderstaande schematische weergave toont hoe gebruikers, Active Directory, files
 
 ## Gebruikte technologieën
 
-- Windows Server  
-- Active Directory Domain Services  
-- Group Policy  
-- NTFS & DFS  
-- RSAT / MMC  
+<div class="badge-row" style="margin-top: 1rem;">
+  <span class="badge">Windows Server</span>
+  <span class="badge">Active Directory Domain Services</span>
+  <span class="badge">Group Policy</span>
+  <span class="badge">NTFS & DFS</span>
+  <span class="badge">RSAT / MMC</span>
+</div>
 
+  </div>
+</div>

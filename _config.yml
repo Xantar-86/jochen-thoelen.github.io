@@ -1,14 +1,20 @@
 title: Jochen Thoelen - Portfolio
 description: Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling, met focus op structuur, security, betrouwbaarheid en realistische use-cases.
-theme: minima
 
 url: https://xantar-86.github.io
 baseurl: /jochen-thoelen.github.io
+
 header_pages:
   - ad-electro/index.md
   - botje-familyhub/index.md
+
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+
+# Exclude from processing
+exclude:
+  - README.md
+  - portfolio-site-backup/

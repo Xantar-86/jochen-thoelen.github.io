@@ -1,9 +1,55 @@
----
-title: Jochen Thoelen - Portfolio
-description: Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling, met focus op structuur, security, betrouwbaarheid en realistische use-cases.
----
 
-<!-- Hero Section -->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jochen Thoelen - Portfolio</title>
+    <meta name="description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling, met focus op structuur, security, betrouwbaarheid en realistische use-cases.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jochen Thoelen - Portfolio">
+    <meta property="og:description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling, met focus op structuur, security, betrouwbaarheid en realistische use-cases.">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./" class="nav-logo">
+                <span class="logo-text">JT</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Navigatie wisselen">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link active">Home</a></li>
+                <li><a href="./ad-electro/" class="nav-link">AD Project</a></li>
+                <li><a href="./botje-familyhub/" class="nav-link">Family Hub</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Wissel donker/licht thema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="container">
@@ -81,7 +127,7 @@ description: Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en
     </div>
 
     <div class="card-grid">
-      <a class="card reveal" href="{{ '/ad-electro/' | relative_url }}">
+      <a class="card reveal" href="./ad-electro/">
         <h3><i class="fas fa-network-wired" style="color: var(--accent-primary); margin-right: 8px;"></i>Active Directory & Windows Server (Electro)</h3>
         <p class="muted">
           Realistische Windows Server infrastructuur voor een fictieve KMO,
@@ -101,7 +147,7 @@ description: Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en
         </ul>
       </a>
 
-      <a class="card reveal" href="{{ '/botje-familyhub/' | relative_url }}">
+      <a class="card reveal" href="./botje-familyhub/">
         <h3><i class="fas fa-home" style="color: var(--accent-primary); margin-right: 8px;"></i>Botje / Family Hub</h3>
         <p class="muted">
           Eigen webapplicatie rond gezinsplanning en automatisatie,
@@ -148,3 +194,42 @@ description: Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en
     </div>
   </div>
 </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">JT</span>
+                    <p>Jochen Thoelen</p>
+                    <span class="footer-tagline">IT Infrastructure Specialist</span>
+                </div>
+                <div class="footer-links">
+                    <a href="./">Home</a>
+                    <a href="./ad-electro/">AD Project</a>
+                    <a href="./botje-familyhub/">Family Hub</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jochen-thoelen-b83106189" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jochen Thoelen. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

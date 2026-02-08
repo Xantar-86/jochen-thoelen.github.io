@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Directory & Windows Server – Electro</title>
+    <meta name="description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Active Directory & Windows Server – Electro">
+    <meta property="og:description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-text">JT</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Navigatie wisselen">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="../" class="nav-link">Home</a></li>
+                <li><a href="../ad-electro/" class="nav-link active">AD Project</a></li>
+                <li><a href="../botje-familyhub/" class="nav-link">Family Hub</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Wissel donker/licht thema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+<section class="hero" style="min-height: 40vh; padding: 100px 0 40px;">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-greeting">Project</div>
+      <h1 class="hero-title">Active Directory & Windows Server – Electro</h1>
+      <p class="hero-description">
+        Een realistische Active Directory-omgeving voor een fictieve KMO,
+        met focus op structuur, security, schaalbaarheid en beheerbaarheid.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Page Content -->
+<div class="page-content">
+  <div class="container">
+
+<h2>Context & doelstelling</h2>
+
+- Middelgrote organisatie met meerdere afdelingen  
+- Centrale Windows Server infrastructuur  
+- Gecentraliseerd gebruikers- en rechtenbeheer  
+- Strikte scheiding tussen gebruikers, computers en servers  
+
+<strong>Doel:</strong>  
+Een <strong>onderhoudsvriendelijke en uitbreidbare domeinstructuur</strong> die eenvoudig te beheren is en duidelijke security-grenzen hanteert.
+
+<hr>
+
+<h2>Waarom deze setup?</h2>
+
+Deze omgeving is bewust opgezet volgens klassieke enterprise-principes:
+
+- duidelijke <strong>OU-structuur</strong> i.p.v. een "flat" AD
+- <strong>AGDLP-model</strong> voor toegangsbeheer
+- geen rechten rechtstreeks op gebruikers
+- auditing en logging standaard voorzien
+- fileshares en policies schaalbaar per afdeling
+
+Dit zorgt voor:
+- minder fouten bij groei
+- eenvoudiger troubleshooting
+- betere security-controle
+- duidelijke overdraagbaarheid naar andere beheerders
+
+<hr>
+
+<h2>Architectuur (overzicht)</h2>
+
+Onderstaande schematische weergave toont hoe gebruikers, Active Directory, fileservers en policies samenwerken binnen de omgeving.
+
+<figure class="shot reveal arch-figure">
+  <img
+    src="../assets/images/ad/ADusers.jpg"
+    alt="Active Directory architectuur"
+    loading="lazy"
+  >
+  <figcaption>
+    <strong>Architectuur overzicht</strong><br>
+    Gebruikers authenticeren via Active Directory. Toegang tot fileshares en resources verloopt via groepslidmaatschappen, GPO's en NTFS-rechten, beheerd vanuit een centrale Windows Server omgeving.
+  </figcaption>
+</figure>
+
+<hr>
+
+<h2>Wat ik heb opgezet</h2>
+
+<h3>Active Directory structuur</h3>
+- Logische <strong>OU-structuur per afdeling</strong>
+- Scheiding tussen:
+  - users
+  - computers
+  - servers
+- Voorbereid op delegatie en groei
+
+<h3>Groepen & rechten (AGDLP)</h3>
+- Correct gebruik van het <strong>AGDLP-model</strong>
+- Rollen via <strong>globale groepen</strong>
+- Toegang via <strong>domain local groups</strong>
+- Geen permissies rechtstreeks op gebruikers
+
+<h3>Fileshares & opslag</h3>
+- Fileshares beheerd via <strong>Server Manager</strong>
+- <strong>Access-Based Enumeration</strong> actief
+- NTFS-rechten uitsluitend via groepen
+- Structuur per afdeling en functie
+
+<h3>Group Policy Objects (GPO)</h3>
+- Password & account lockout policies
+- Logon scripts
+- Drive mappings
+- Folder redirection
+- Consistente configuratie per OU
+
+<h3>Auditing & beheer</h3>
+- File system auditing op gevoelige mappen
+- Inzicht in wie wat wanneer heeft geraadpleegd
+- Beheer via <strong>RSAT / MMC</strong>
+- Focus op traceerbaarheid en troubleshooting
+
+<hr>
+
+<h2>Screenshots (praktijkvoorbeelden)</h2>
+
+<div class="shot-grid">
+
+  <figure class="shot reveal">
+    <img
+      src="../assets/images/ad/gpo.jpg"
+      alt="Default Domain Policy instellingen"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>Group Policy – Security policies</strong><br>
+      Password-, lockout- en Kerberos-instellingen centraal afgedwongen via de Default Domain Policy.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="../assets/images/ad/shares.jpg"
+      alt="Fileshares overzicht"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>Fileshares & opslag</strong><br>
+      Overzicht van SMB-shares per server, met duidelijke scheiding tussen afdelingen en data-types.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="../assets/images/ad/abe.jpg"
+      alt="Share permissies en ABE"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>NTFS-rechten & Access-Based Enumeration</strong><br>
+      Gebruikers zien enkel mappen waarvoor ze effectief rechten hebben.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="../assets/images/ad/ADusers.jpg"
+      alt="Active Directory groepen"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>AD-groepen volgens AGDLP</strong><br>
+      Duidelijke scheiding tussen rollen en toegangsrechten via groepsstructuur.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="../assets/images/ad/audit.jpg"
+      alt="File auditing"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>Auditing & logging</strong><br>
+      File access wordt gelogd voor controle, security en troubleshooting.
+    </figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <img
+      src="../assets/images/ad/dfs.jpg"
+      alt="DFS SYSVOL"
+      loading="lazy"
+    >
+    <figcaption>
+      <strong>SYSVOL & replicatie</strong><br>
+      Policies en scripts consistent beschikbaar via SYSVOL replicatie.
+    </figcaption>
+  </figure>
+
+</div>
+
+<hr>
+
+<h2>Wat dit project aantoont</h2>
+
+- Inzicht in <strong>Active Directory design</strong>
+- Correct gebruik van <strong>security best practices</strong>
+- Praktische ervaring met <strong>Windows Server</strong>
+- Gestructureerde aanpak van IT-infrastructuur
+- Denken in <strong>beheerbaarheid en schaalbaarheid</strong>
+
+<hr>
+
+<h2>Gebruikte technologieën</h2>
+
+<div class="badge-row" style="margin-top: 1rem;">
+  <span class="badge">Windows Server</span>
+  <span class="badge">Active Directory Domain Services</span>
+  <span class="badge">Group Policy</span>
+  <span class="badge">NTFS & DFS</span>
+  <span class="badge">RSAT / MMC</span>
+</div>
+
+  </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">JT</span>
+                    <p>Jochen Thoelen</p>
+                    <span class="footer-tagline">IT Infrastructure Specialist</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../">Home</a>
+                    <a href="../ad-electro/">AD Project</a>
+                    <a href="../botje-familyhub/">Family Hub</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jochen-thoelen-b83106189" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jochen Thoelen. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

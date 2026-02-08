@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botje / Family Hub</title>
+    <meta name="description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Botje / Family Hub">
+    <meta property="og:description" content="Praktijkgerichte IT-projecten rond infrastructuur, automatisatie en webontwikkeling">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-text">JT</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Navigatie wisselen">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="../" class="nav-link">Home</a></li>
+                <li><a href="../ad-electro/" class="nav-link">AD Project</a></li>
+                <li><a href="../botje-familyhub/" class="nav-link active">Family Hub</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Wissel donker/licht thema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+<section class="hero" style="min-height: 40vh; padding: 100px 0 40px;">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-greeting">Project</div>
+      <h1 class="hero-title">Botje / Family Hub</h1>
+      <p class="hero-description">
+        Een eigen webapplicatie rond gezinsplanning en automatisatie,
+        met aandacht voor security, configuratie en integraties.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Page Content -->
+<div class="page-content">
+  <div class="container">
+
+<h2>Overzicht</h2>
+
+Botje / Family Hub is een eigen webapplicatie rond gezinsplanning en automatisatie.  
+Het project focust op betrouwbaarheid, duidelijke structuur, veilige configuratie en integratie met externe services.
+
+De applicatie simuleert een realistische productieomgeving waarin planning, notificaties en synchronisatie centraal staan.
+
+<hr>
+
+<h2>Context</h2>
+
+- Gezinsgerichte planning (family hub concept)
+- Meerdere gebruikers en contexten
+- Automatisatie van terugkerende taken
+- Integratie met externe APIs (o.a. Google Calendar)
+
+Doel: een <strong>stabiele en onderhoudbare webapplicatie</strong> met aandacht voor security, configuratie en uitbreidbaarheid.
+
+<hr>
+
+<h2>Wat ik heb opgezet</h2>
+
+<h3>Applicatiestructuur</h3>
+- Next.js met <strong>App Router</strong>
+- Duidelijke scheiding via route groups
+- Herbruikbare componenten en logische mappenstructuur
+
+<h3>Data & authenticatie</h3>
+- <strong>Supabase</strong> als backend (database + authentication)
+- Structuur per gezin / context
+- Dataconsistentie en server-side validatie
+
+<h3>Google Calendar integratie</h3>
+- Integratie via <strong>Google Calendar API</strong>
+- Gebruik van <strong>service accounts</strong>
+- Automatisch aanmaken en synchroniseren van kalenderitems en reminders
+
+<h3>Configuratie & secrets</h3>
+- Geen hardcoded secrets
+- Environment variables via:
+  - <code>.env.local</code> (lokaal)
+  - cloud environment settings
+- Duidelijke scheiding tussen test- en productieconfiguratie
+
+<hr>
+
+<h2>Security & betrouwbaarheid</h2>
+
+- Secrets en credentials nooit in frontend code
+- Bewuste keuzes rond permissions en API scopes
+- Correct omgaan met service account beperkingen
+- Stabiliteit en voorspelbaarheid boven snelle workarounds
+
+<hr>
+
+<h2>Troubleshooting & leerpunten</h2>
+
+- Oplossen van issues rond:
+  - ontbrekende of foutieve environment variables
+  - Google Calendar permissions en attendees
+  - Next.js routing en duplicaten
+- Inzicht opgedaan in:
+  - cloud-configuratie
+  - service account beperkingen
+  - reproduceerbare fixes en versiebeheer
+
+<hr>
+
+<h2>Wat dit project aantoont</h2>
+
+- Moderne webontwikkeling met Next.js
+- API-integratie in een realistische context
+- Security-bewust werken
+- Probleemoplossend vermogen bij niet-triviale issues
+- Gestructureerde en professionele aanpak
+
+<hr>
+
+<h2>Gebruikte technologieën</h2>
+
+<div class="badge-row" style="margin-top: 1rem;">
+  <span class="badge">Next.js (App Router)</span>
+  <span class="badge">Supabase (database & authentication)</span>
+  <span class="badge">Google Calendar API</span>
+  <span class="badge">JavaScript / TypeScript</span>
+  <span class="badge">Environment variables & cloud configuration</span>
+</div>
+
+<hr>
+
+<h2>Screenshots</h2>
+
+<div class="shot-grid">
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/dashboard.jpg" target="_blank">
+      <img src="../assets/images/botje/dashboard.jpg" alt="Botje - Dashboard"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Dashboard</strong><br>Startpagina met modules en status-overzicht (dark/light).</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/agenda.jpg" target="_blank">
+      <img src="../assets/images/botje/agenda.jpg" alt="Botje - Agenda"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Gezinsagenda</strong><br>Overzicht van gedeelde en persoonlijke events + sync met Google Calendar.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/bestanden.jpg" target="_blank">
+      <img src="../assets/images/botje/bestanden.jpg" alt="Botje - Bestanden"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Bestanden</strong><br>OneDrive-integratie voor gedeelde mappen + upload/rename/delete.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/boodschappen.jpg" target="_blank">
+      <img src="../assets/images/botje/boodschappen.jpg" alt="Botje - Boodschappen" 
+      loading="lazy">
+    </a>
+    <figcaption><strong>Boodschappen</strong><br>Lijsten per winkel met snelle afvink-flow in de winkel.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/klantenkaarten.jpg" target="_blank">
+      <img src="../assets/images/botje/klantenkaarten.jpg" alt="Botje - Klantenkaarten"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Klantenkaarten</strong><br>QR-codes fullscreen scanbaar aan de kassa (mobile-first).</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/klantenkaarten2.jpg" target="_blank">
+      <img src="../assets/images/botje/klantenkaarten2.jpg" alt="Botje - QR modal"
+      loading="lazy">
+    </a>
+    <figcaption><strong>QR modal</strong><br>Kaart tonen/verwijden met duidelijke UI en veilige opslag.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/gezinskluis.jpg" target="_blank">
+      <img src="../assets/images/botje/gezinskluis.jpg" alt="Botje - Gezinskluis"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Gezinskluis</strong><br>Veilige opslag van gevoelige documenten en wachtwoorden.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/verzekering_auto.jpg" target="_blank">
+      <img src="../assets/images/botje/verzekering_auto.jpg" alt="Botje - Verzekeringen"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Verzekeringen</strong><br>Overzicht van verzekeringspolissen met details en vervaldata.</figcaption>
+  </figure>
+
+  <figure class="shot reveal">
+    <a href="../assets/images/botje/botje2.jpg" target="_blank">
+      <img src="../assets/images/botje/botje2.jpg" alt="Botje - Chatbot"
+      loading="lazy">
+    </a>
+    <figcaption><strong>Botje Chat</strong><br>AI-chatbot voor natuurlijke taalinput en automatisatie.</figcaption>
+  </figure>
+
+</div>
+
+<hr>
+
+<h2>Technische highlights (per functionaliteit)</h2>
+
+<h3>Dashboard & modules</h3>
+- Modulaire UI-components per feature (agenda, bestanden, boodschappen).
+- Consistente styling met ondersteuning voor dark/light mode.
+- Ontworpen met focus op eenvoud voor niet-technische gebruikers.
+
+<h3>Gezinsagenda</h3>
+- Integratie met Google Calendar via service accounts.
+- Duidelijke scheiding tussen gedeelde en persoonlijke events.
+- Betrouwbare synchronisatie met gecontroleerde foutafhandeling.
+
+<h3>Boodschappen & klantenkaarten</h3>
+- Data-structuur per winkel en lijst.
+- Mobile-first gebruik in de winkel.
+- QR-codes fullscreen scanbaar aan de kassa.
+
+<h3>Bestandenbeheer</h3>
+- OneDrive-integratie voor gedeelde opslag.
+- Basis bestandsbeheer (upload, mappen, verwijderen).
+- Geen secrets of tokens in de client.
+
+<h3>Gezinskluis</h3>
+- Veilige opslag van gevoelige documenten en wachtwoorden.
+- Encryptie en toegangscontrole per gebruiker.
+- Categorisatie en snel zoeken van documenten.
+
+<h3>Verzekeringen</h3>
+- Centraal overzicht van alle verzekeringspolissen.
+- Automatische herinneringen bij vervaldata.
+- Documenten koppelen aan specifieke verzekeringen.
+
+<h3>Chat &amp; automatisatie (Botje)</h3>
+- Natuurlijke taalinput om acties te triggeren.
+- AI-gestuurde assistent voor dagelijkse taken.
+- Server-side validatie en guardrails.
+- Transparante feedback richting gebruiker.
+
+<hr>
+
+<h2>Architectuur (overzicht)</h2>
+
+<figure class="shot reveal arch-figure">
+  <a href="../assets/images/botje/architectuur.jpg" target="_blank">
+    <img
+      src="../assets/images/botje/architectuur.jpg"
+      alt="Botje – Architectuur overzicht">
+  </a>
+  <figcaption>
+    <strong>Architectuur</strong><br>
+    Overzicht van de scheiding tussen frontend, API-logica, Supabase en externe services.
+  </figcaption>
+</figure>
+
+  </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">JT</span>
+                    <p>Jochen Thoelen</p>
+                    <span class="footer-tagline">IT Infrastructure Specialist</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../">Home</a>
+                    <a href="../ad-electro/">AD Project</a>
+                    <a href="../botje-familyhub/">Family Hub</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jochen-thoelen-b83106189" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jochen Thoelen. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
